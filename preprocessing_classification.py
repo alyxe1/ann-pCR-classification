@@ -8,17 +8,19 @@ import pickle
 from sklearn.preprocessing import MinMaxScaler, normalize
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
+
 def data_preprocessing(file_path):
     data = load_data(file_path)
     data = data_cleansing(data)
     data = data.to_numpy()
     x, y = data[:, 3:], data[:, 1]
 
-    x = scale(x) # Data Transformation: Max-min scaler
+    x = scale(x)  # Data Transformation: Max-min scaler
     y = y.astype('int')
 
-    x = LDA(x, y) # Data Reduction: Linear Discrimination Analysis
+    x = LDA(x, y)  # Data Reduction: Linear Discrimination Analysis
     return x, y
+
 
 def LDA(x, y):
     """
@@ -47,6 +49,7 @@ def scale(x):
         pickle.dump(scaler, f)
     return x
 
+
 def load_data(file_path):
     """
     data loader function
@@ -55,9 +58,13 @@ def load_data(file_path):
     """
     patients = pd.read_excel(file_path, skiprows=0, sheet_name='Sheet1')
     return patients
+
+
 def data_cleansing(data):
     """"""
     return drop_none(data)
+
+
 def drop_none(data):
     try:
         data.loc[data['pCR (outcome)'] == 999] = np.nan
@@ -81,4 +88,3 @@ if __name__ == '__main__':
     # print(len(x[0]))
     # print(x)
     # print(y, type(y[1]))
-

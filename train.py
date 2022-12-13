@@ -9,6 +9,7 @@ import time
 
 import model
 import preprocessing_classification_for_single
+
 epoches = 250
 lr = 1
 TRAIN_PATH = "./data/trainDataset.xls"
@@ -75,4 +76,3 @@ with torch.no_grad():
         # Print accuracy
     print('Accuracy is %d %%' % (100.0 * correct / total))
     print('--------------------------------')
-

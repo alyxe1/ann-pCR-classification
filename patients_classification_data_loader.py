@@ -6,7 +6,9 @@ from torch.utils.data.dataset import Dataset
 
 import preprocessing_classification
 import torch
+
 torch.set_default_tensor_type(torch.DoubleTensor)
+
 
 class PatientsDataLoader(Dataset):
     def __init__(self, file_path):
@@ -20,7 +22,6 @@ class PatientsDataLoader(Dataset):
 
     def __len__(self):
         return len(self.data)
-
 
 
 if __name__ == '__main__':

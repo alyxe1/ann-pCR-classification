@@ -7,6 +7,7 @@ import torch.nn.functional as F
 import preprocessing_classification
 import torch
 
+
 class NN(nn.Module):
     def __init__(self):
         super().__init__()
