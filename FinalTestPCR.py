@@ -13,13 +13,11 @@ import preprocessing_classification
 import pandas as pd
 
 SAVED_MODEL_PATH = "./savedmodels/finalmodel.pth"
-TEST_EXCEL_PATH = "./data/testDatasetExample.xls"
+TEST_EXCEL_PATH = "./data/testDatasetExample.xls" #
 
 LDA_MODEL_PATH = "./savedmodels/lda_model.pkl"
 SCALER_MODEL_PATH = "./savedmodels/scaler.pkl"
 NORM_MODEL_PATH = "./savedmodels/normalizer.pkl"
-
-FAKE_TEST_EXCEL_PATH = "./data/testDatasetFake.xls"
 
 SAVED_EXCEL_PATH = "./FinalResult.xls"
 
